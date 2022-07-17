@@ -1,0 +1,40 @@
+<div class="w-100">
+    <div class="product-category mt-4">
+        <table class="m-auto">
+            <tr>
+                <td>
+                    <table class="text-left">
+                        <tr>
+                            <td style="font-size: 24px; margin-top: 24px;">Departamentos</td>
+                        </tr>
+                        <tr>
+                            <td style="font-size:16px;">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et
+                                dolore magna aliqua.
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <div class="mt-3">
+            <div class="input-group mb-3 w-75 m-auto">
+                <input type="text" class="form-control" placeholder="Buscar categoria" aria-label="Buscar categoria"
+                    aria-describedby="basic-addon2" [(ngModel)]="categoryFilter" (keyup.enter)="initCategories()">
+                <div class="input-group-append">
+                    <button class="btn btn-default" type="button" (click)="initCategories()">
+                        <mat-icon>search</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <ng-container *ngIf="!isLoading">
+            <ng-container *ngFor="let category of categories">
+                <div class="mt-3">
+                    <app-category [category]="category"></app-category>
+                </div>
+            </ng-container>
+        </ng-container>
+    </div>
+</div>

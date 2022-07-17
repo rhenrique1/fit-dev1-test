@@ -1,0 +1,22 @@
+<table class="product-card text-center">
+    <tr>
+        <td class="product-photo">
+            <mat-icon>fastfood</mat-icon>
+        </td>
+    <tr>
+        <td class="fs-16 product-name">{{ product.name }}</td>
+    </tr>
+    <tr>
+        <td class="price-tag">
+            {{ product.price | currency: 'BRL' }}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <hr>
+            <button mat-flat-button class="add-button" aria-label="Adicionar ao carrinho.">
+                <mat-icon >add_shopping_cart</mat-icon>
+            </button>
+        </td>
+    </tr>
+</table>
