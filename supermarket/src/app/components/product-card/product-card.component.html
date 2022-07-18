@@ -12,10 +12,20 @@
         </td>
     </tr>
     <tr>
+        <td class="quantity" [ngStyle]="{ color: product.available > 1 ? 'lightblue' : 'red' }">
+            Restam: {{ product.available }} un.
+        </td>
+    </tr>
+    <tr>
         <td>
             <hr>
-            <button mat-flat-button class="add-button" aria-label="Adicionar ao carrinho.">
-                <mat-icon >add_shopping_cart</mat-icon>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button mat-flat-button class="add-to-cart-button" aria-label="Adicionar ao carrinho."
+                (click)="onAddProductToCart()">
+                <mat-icon>add_shopping_cart</mat-icon>
             </button>
         </td>
     </tr>

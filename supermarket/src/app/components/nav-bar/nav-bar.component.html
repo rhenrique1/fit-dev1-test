@@ -1,51 +1,40 @@
 <nav class="navbar navbar-expand-lg bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand text-light" style="margin-left: 8px;" href="#">Preço Baixo</a>
+        <a class="navbar-brand text-light" style="margin-left: 8px; cursor:pointer;" (click)="navigateHome()">Preço Baixo</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <!-- <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Departamentos
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Alimentos</a></li>
-                        <li><a class="dropdown-item" href="#">Bebidas</a></li>
-                        <li><a class="dropdown-item" href="#">Carnes</a></li>
-                    </ul>
-                </li> -->
             </ul>
             <ul class="navbar-nav" style="margin-right: 8px;">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button"
+                    <a class="nav-link dropdown-toggle text-light" id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Olá, userName!
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li>
-                            <span class="dropdown-item" href="#">
+                            <span class="dropdown-item">
                                 <mat-icon>account_circle</mat-icon> Minha conta
                             </span>
                         </li>
                         <li>
-                            <span class="dropdown-item" href="#">
+                            <span class="dropdown-item">
                                 <mat-icon>favorite</mat-icon> Lista de desejos
                             </span>
                         </li>
                         <li>
-                            <span class="dropdown-item" href="#">
+                            <span class="dropdown-item">
                                 <mat-icon>exit_to_app</mat-icon> Logout
                             </span>
                         </li>
                     </ul>
                 </li>
             </ul>
-            <button mat-flat-button style="margin-right: 8px;">
-                <mat-icon>shopping_cart</mat-icon>Meu Carrinho
+            <button type="button" class="btn btn-secondary" (click)="onGoToCart()">
+                Meu carrinho <span class="badge badge-light">{{ cartService.products.length }}</span>
             </button>
         </div>
     </div>

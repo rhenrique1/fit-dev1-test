@@ -1,0 +1,46 @@
+<table class="product-card text-center">
+    <tr>
+        <td colspan="2">
+            <hr>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" class="product-photo">
+            <mat-icon>fastfood</mat-icon>
+        </td>
+    <tr>
+        <td colspan="2" class="fs-16 product-name">{{ product.name }}</td>
+    </tr>
+    <tr>
+        <td colspan="2" class="price-tag">
+            {{ product.price | currency: 'BRL' }}
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" class="quantity">
+            Adicionados: {{ product.added }} un.
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" class="quantity" [ngStyle]="{ color: product.available > 1 ? 'lightblue' : 'red' }">
+            Restam: {{ product.available }} un.
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <hr>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button mat-flat-button color="warn" class="remove-button ml-2 mb-2" aria-label="Remover quantidade." (click)="onRemoveProduct()">
+                <mat-icon>remove</mat-icon>
+            </button>
+        </td>
+        <td>
+            <button mat-flat-button color="primary" class="add-button mr-2 mb-2" aria-label="Adicionar quantidade." (click)="onAddProduct()">
+                <mat-icon>add</mat-icon>
+            </button>
+        </td>
+    </tr>
+</table>

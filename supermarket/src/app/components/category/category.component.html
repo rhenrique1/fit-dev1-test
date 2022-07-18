@@ -1,28 +1,4 @@
-<!-- <div class="accordion" id="accordionExample">
-    <div class="accordion-item m-auto w-75">
-        <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                aria-expanded="true" aria-controls="collapseOne">
-                <p class="fs-16">{{ category.name }}</p>
-            </button>
-        </h2>
-        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-            data-bs-parent="#accordionExample">
-            <div class="accordion-body p-0">
-                <div class="w-100" style="background-color: #ebebeb;">
-                    <div class="row d-flex justify-content-around">
-                        <ng-container *ngIf="!isLoading"></ng-container>
-                        <div *ngFor="let product of products" class="col-md-2 mt-4">
-                            <app-product-card [product]="product" (click)="addProduct(product.id)">
-                            </app-product-card>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
-<div class="m-auto w-75">
+<div class="m-auto">
     <mat-accordion>
         <mat-expansion-panel>
             <mat-expansion-panel-header>
@@ -34,8 +10,7 @@
                 <div class="row d-flex justify-content-around">
                     <ng-container *ngIf="!isLoading"></ng-container>
                     <div *ngFor="let product of products" class="col-md-2 mt-4">
-                        <app-product-card [product]="product" (click)="addProduct(product.id)">
-                        </app-product-card>
+                        <app-product-card [product]="product"></app-product-card>
                     </div>
                 </div>
             </div>

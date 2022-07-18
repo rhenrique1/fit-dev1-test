@@ -11,10 +11,17 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatDialogModule } from '@angular/material/dialog';
+
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { CategoryComponent } from './components/category/category.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { CategoryListComponent } from './components/category-list/category-list.component';
+import { CartComponent } from './components/cart/cart.component';
+import { CartProductComponent } from './components/cart-product/cart-product.component';
+import { RouterModule } from '@angular/router';
+import { ConfirmDialogComponent } from './shared/dialogs/confirm-dialog/confirm-dialog.component';
+import { PurchaseDialogComponent } from './shared/dialogs/purchase-dialog/purchase-dialog.component';
 
 @NgModule({
   declarations: [
@@ -22,18 +29,27 @@ import { CategoryListComponent } from './components/category-list/category-list.
     NavBarComponent,
     CategoryComponent,
     ProductCardComponent,
-    CategoryListComponent
+    CategoryListComponent,
+    CartComponent,
+    CartProductComponent,
+    ConfirmDialogComponent,
+    PurchaseDialogComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
     MatSliderModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
     MatExpansionModule,
-    FormsModule
+    MatDialogModule,
+    RouterModule.forRoot([
+      { path: 'my-cart/', component: CartComponent },
+      { path: '', component: CategoryListComponent }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]

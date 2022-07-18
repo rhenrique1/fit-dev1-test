@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CartService } from 'src/app/shared/services/cart.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, public cartService: CartService) { }
 
   ngOnInit(): void {
   }
 
+  onGoToCart() {
+    this.router.navigateByUrl('my-cart/');
+  }
+
+  navigateHome() {
+    this.router.navigateByUrl('');
+  }
 }

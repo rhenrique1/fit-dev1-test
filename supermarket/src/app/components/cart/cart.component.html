@@ -1,0 +1,40 @@
+<div class="w-100">
+    <div class="container product-category mt-4 m-auto d-flex">
+        <div class="mt-4 col-6">
+            <p class="fs-1">Produtos</p>
+            <div class="container" style="min-height: 20vh; background-color: white;">
+                <div class="row">
+                    <ng-container *ngIf="products.length == 0">
+                        <p class="fs-4 text-center mt-4">Carrinho vazio.</p>
+                    </ng-container>
+                    <ng-container *ngFor="let product of products">
+                        <div class="mt-3 col">
+                            <app-cart-product [product]="product" (updateProducts)="ngOnInit()"></app-cart-product>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+        <div class="col-1"></div>
+        <div class="mt-4 col">
+            <p class="fs-1">Resumo</p>
+            <div class="container" style="background-color: white;">
+                <div class="row">
+                    <div class="col mt-3">
+                        <p class="fs-4">Valor: {{ cartService.totalValue | currency: 'BRL' }} </p>
+                    </div>
+                    <div class="col-xs-12 mt-2">
+                        <button class="btn btn-success btn-lg btn-block w-100" aria-label="Fechar pedido." (click)="onConfirmPurchase()" [disabled]="cartService.totalValue == 0">
+                            FECHAR PEDIDO
+                        </button>
+                    </div>
+                    <div class="col-xs-12 mt-3 mb-2">
+                        <button class="btn btn-outline-success btn-lg btn-block w-100" aria-label="Fechar pedido." (click)="onReturnHome()">
+                            CONTINUAR COMPRANDO
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

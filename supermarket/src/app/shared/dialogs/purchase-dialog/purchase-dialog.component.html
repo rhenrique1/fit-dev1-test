@@ -1,0 +1,12 @@
+<h2 mat-dialog-title>Finalizar Compra</h2>
+<mat-dialog-content class="mat-typography">
+    <div class="container product-category mt-4 m-auto d-flex">
+        <div class="col">
+            <p>Valor: {{ cartService.totalValue | currency: 'BRL' }} </p>
+        </div>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button (click)='this.dialogRef.close(false)'>Cancelar</button>
+    <button mat-button cdkFocusInitial (click)='this.dialogRef.close(true)'>Finalizar</button>
+</mat-dialog-actions>
